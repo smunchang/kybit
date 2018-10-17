@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="transaction">
+
+    <insert id="insertTransaction" parameterType="com.kaybo.kybit.model.Transaction">
+        INSERT INTO tb_transaction
+        (user_no, kybit, type, ref_user_no)
+        VALUES
+        (#{userNo}, #{kybit}, #{type}, #{ref_user_no});
+    </insert>
+</mapper>
