@@ -1,4 +1,4 @@
-package com.kaybo.kybit.service;
+package com.kaybo.kbit.service;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -29,12 +29,12 @@ public class AspectService {
     @Autowired
     private UserService userService;
 
-    @Before("execution(* com.kaybo.kybit.controller.KybitController.*(..))")
+    @Before("execution(* com.kaybo.kbit.controller.KbitController.*(..))")
     public void onBeforeHandler(JoinPoint joinPoint) {
 
         ServletRequestAttributes t = (ServletRequestAttributes) RequestContextHolder.currentRequestAttributes();
         HttpServletRequest request = t.getRequest();
-        String userNo = request.getHeader("userNo");
+        long userNo = Long.parseLong(request.getHeader("userNo"));
         String userId = request.getHeader("userId");
 
         userService.checkUser(userNo, userId);

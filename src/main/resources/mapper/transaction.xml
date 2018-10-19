@@ -5,10 +5,17 @@
 
 <mapper namespace="transaction">
 
-    <insert id="insertTransaction" parameterType="com.kaybo.kybit.model.Transaction">
+    <insert id="insertTransaction" parameterType="com.kaybo.kbit.model.Transaction">
         INSERT INTO tb_transaction
-        (user_no, kybit, type, ref_user_no)
+        (user_no, kbit, type, ref_user_no, reg_dt)
         VALUES
-        (#{userNo}, #{kybit}, #{type}, #{ref_user_no});
+        (#{userNo}, #{kbit}, #{type}, #{refUserNo}, now());
     </insert>
+
+    <select id="listTransaction" parameterType="long" resultType="com.kaybo.kbit.model.Transaction" >
+        SELECT user_no, kbit, type, ref_user_no, reg_dt
+        FROM	tb_transaction
+        WHERE	user_no = #{userNo}
+        ORDER BY reg_dt DESC
+    </select>
 </mapper>

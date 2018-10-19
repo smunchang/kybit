@@ -1,4 +1,4 @@
-package com.kaybo.kybit;
+package com.kaybo.kbit;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -19,7 +19,7 @@ public class AppInterceptor extends HandlerInterceptorAdapter {
 
         String reqUrl = request.getRequestURL().toString();
 
-        if(!reqUrl.contains("/kybit/")) return true;
+        if(!reqUrl.contains("/kbit/")) return true;
 
         String userNo = request.getHeader("userNo") ;
         String userId = request.getHeader("userId") ;

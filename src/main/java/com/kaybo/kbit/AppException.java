@@ -1,4 +1,4 @@
-package com.kaybo.kybit;
+package com.kaybo.kbit;
 
 public class AppException extends RuntimeException{
 

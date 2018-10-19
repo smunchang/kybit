@@ -1,4 +1,4 @@
-package com.kaybo.kybit.model;
+package com.kaybo.kbit.model;
 
 public class ErrorResponse {
     private int errCode;

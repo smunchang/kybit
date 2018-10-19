@@ -1,10 +1,10 @@
-package com.kaybo.kybit;
+package com.kaybo.kbit;
 
-import com.kaybo.kybit.model.ErrorResponse;
+import com.kaybo.kbit.model.ErrorResponse;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
-@ControllerAdvice("com.kaybo.kybit")
+@ControllerAdvice("com.kaybo.kbit")
 @RestController
 public class AppExceptionHandler {
 

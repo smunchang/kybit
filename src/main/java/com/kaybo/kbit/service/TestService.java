@@ -1,8 +1,5 @@
-package com.kaybo.kybit.service;
+package com.kaybo.kbit.service;
 
-import com.kaybo.kybit.AppException;
-import com.kaybo.kybit.model.Transaction;
-import com.kaybo.kybit.model.User;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.mybatis.spring.SqlSessionTemplate;

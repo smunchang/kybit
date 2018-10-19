@@ -6,7 +6,7 @@
 <mapper namespace="user">
 
 
-    <select id="checkUser" parameterType="java.lang.String" resultType="boolean" >
+    <select id="checkUser" parameterType="long" resultType="boolean" >
         SELECT EXISTS(
             SELECT 	user_no
             FROM	tb_user
@@ -14,22 +14,22 @@
         )
     </select>
 
-    <select id="selectUser" parameterType="java.lang.String" resultType="com.kaybo.kybit.model.User" >
-        SELECT user_no, user_id, kybit
+    <select id="selectUser" parameterType="long" resultType="com.kaybo.kbit.model.User" >
+        SELECT user_no, user_id, kbit
         FROM	tb_user
         WHERE	user_no = #{userNo}
     </select>
 
-    <insert id="insertUser" parameterType="com.kaybo.kybit.model.User">
+    <insert id="insertUser" parameterType="com.kaybo.kbit.model.User">
         INSERT INTO tb_user
-        (user_no, user_id)
+        (user_no, user_id, reg_dt)
         VALUES
-        (#{userNo}, #{userId});
+        (#{userNo}, #{userId}, now());
     </insert>
 
-    <update id="updateKybitPlus" parameterType="com.kaybo.kybit.model.Transaction">
+    <update id="updateKbitPlus" parameterType="com.kaybo.kbit.model.Transaction">
         UPDATE tb_user SET
-            kybit = kybit + #{kybit}
+            kbit = kbit + #{kbit}
         WHERE 	user_no = #{userNo}
     </update>
 
